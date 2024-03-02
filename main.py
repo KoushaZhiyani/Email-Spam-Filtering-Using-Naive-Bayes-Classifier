@@ -1,18 +1,18 @@
 # Import necessary libraries
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from NBMultinomial import NBMultinomial  # Import the NBMultinomial class from a custom module
-from label_encoder import label_encoder  # Import the label_encoder class from a custom module
+from NBMultinomial import NBMultinomial  # Import the NBMultinomial 
+from label_encoder import label_encoder  # Import the label_encoder
 
 # Read data from CSV file
-data = pd.read_csv(r"spam.csv", encoding='ISO-8859-1')
+data = pd.read_csv(r"Data.csv", encoding='ISO-8859-1')
 
 # Separate features (X) and target variable (y)
 X = data.drop("v1", axis=1)
 y = data["v1"]
 
 # Split the dataset into train and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.0018, random_state=40552, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.0018, random_state=42)
 
 # Initialize and train the label encoder
 lab = label_encoder()
